@@ -10,7 +10,7 @@ This toolkit is a **book project factory**. Install it once, then spawn unlimite
     Claude Author Toolkit (Master Template)
                     ↓
     ┌───────────────────────────────────┐
-    │  /setup-coauthor "your new idea"  │
+    │    /setup-coauthor your-project   │
     └───────────────────────────────────┘
                     ↓
     ┌─────────┬─────────┬─────────┬─────────┐
@@ -63,25 +63,31 @@ git clone https://github.com/Gravicity/claude-author-toolkit.git
 cd claude-author-toolkit
 ```
 
-2. **Create Your First Book Project** (30 seconds):
+2. **Start Claude Code and Create Your First Book** (1 minute):
 ```bash
-./bin/setup_coauthor.sh my-business-guide
-cd my-business-guide
-claude
+claude  # Start Claude Code from toolkit directory
 ```
 
-3. **Watch the Magic** (4 minutes):
+Then in Claude Code:
+```
+/setup-coauthor my-business-guide
+```
+
+3. **Navigate to Your New Project**:
+```bash
+cd my-business-guide
+claude  # Restart Claude Code in your project
+```
+
+4. **Watch the Magic** (4 minutes):
 ```
 /expand-note "A guide to starting a small business with no money"
 ```
 
-4. **Start Another Book** (Without reinstalling!):
-```bash
-# From claude-author-toolkit directory
-./bin/setup_coauthor.sh thriller-novel
-cd thriller-novel
-claude
-/expand-note "Detective discovers case files predict future crimes"
+5. **Create Another Book** (Without reinstalling!):
+Go back to the toolkit directory, start Claude Code, and:
+```
+/setup-coauthor thriller-novel
 ```
 
 Each project is completely independent with its own AI team!
@@ -183,8 +189,9 @@ Tell it you're writing a thriller, it automatically adjusts pacing, structure, a
 ## How It Works (The Simple Version)
 
 ### Step 1: Create Your Writing Space
-```bash
-./bin/setup_coauthor.sh my-book-title
+Start Claude Code in the toolkit directory and run:
+```
+/setup-coauthor my-book-title
 ```
 This creates a complete writing environment with all tools ready to go.
 
@@ -274,8 +281,9 @@ Think of it like website templates, but for books:
 
 ```
 claude-author-toolkit/
-├── book-project/        ← Master template with all AI agents
-├── bin/setup_coauthor.sh ← Creates new projects from template
+├── book-project/          ← Master template with all AI agents
+├── .claude/commands/      ← Contains setup-coauthor command
+├── bin/setup_coauthor.sh  ← Basic copy script (use /setup-coauthor instead)
 │
 └── Your Projects (created by you):
     ├── my-thriller/     ← Independent project #1
@@ -283,6 +291,8 @@ claude-author-toolkit/
     ├── memoir/          ← Independent project #3
     └── fantasy-series/  ← Independent project #4
 ```
+
+**Important**: Always use `/setup-coauthor` command in Claude Code rather than the shell script. The command provides AI assistance in configuring your project!
 
 **The Magic**: One template spawns unlimited, independent book projects. Each gets:
 - All 6 AI agents configured and ready
@@ -309,11 +319,11 @@ Modify the master template to customize all future projects!
 This creates a complete writing SYSTEM with specialized agents, memory across sessions, and batch processing. Plus, you can manage multiple book projects simultaneously - each with its own AI team and memory. It's like the difference between having a notebook versus having multiple fully-staffed writing studios.
 
 ### "Can I work on multiple books at once?"
-Absolutely! Create as many projects as you want:
-```bash
-./bin/setup_coauthor.sh cookbook
-./bin/setup_coauthor.sh autobiography
-./bin/setup_coauthor.sh sci-fi-trilogy
+Absolutely! Start Claude Code in your toolkit directory and create as many projects as you want:
+```
+/setup-coauthor cookbook
+/setup-coauthor autobiography
+/setup-coauthor sci-fi-trilogy
 ```
 Each project is completely independent with its own AI team and memory.
 
@@ -344,9 +354,10 @@ Most issues are solved by:
 Ready to transform how you write? Here's how to begin:
 
 1. **Clone this toolkit**
-2. **Create your first project** with `setup_coauthor.sh`
-3. **Type your idea** and watch the magic happen
-4. **Join the future** of AI-assisted writing
+2. **Start Claude Code** in the toolkit directory
+3. **Create your first project** with `/setup-coauthor`
+4. **Type your idea** and watch the magic happen
+5. **Join the future** of AI-assisted writing
 
 ## Contributing
 
