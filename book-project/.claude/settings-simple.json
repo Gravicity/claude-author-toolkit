@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(manuscript/**)",
+      "Write(manuscript/**)",
+      "Edit(manuscript/**)",
+      "MultiEdit(manuscript/**)",
+      "Read(research/**)",
+      "Write(research/**)",
+      "Edit(research/**)",
+      "Read(assets/**)",
+      "Write(assets/**)",
+      "Read(.claude/**)",
+      "TodoWrite"
+    ],
+    "ask": [
+      "Bash(pandoc:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(npm:*)",
+      "Bash(pip:*)",
+      "WebSearch",
+      "WebFetch"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(**/.env)",
+      "Read(**/secrets/**)",
+      "Read(**/credentials/**)",
+      "Bash(rm -rf:*)",
+      "Bash(sudo:*)",
+      "Bash(curl:*)",
+      "Write(.env)",
+      "Edit(.env)"
+    ]
+  },
+  "outputStyle": "outline-architect"
+}

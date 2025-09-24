@@ -1,0 +1,77 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(manuscript/**)",
+      "Write(manuscript/**)",
+      "Edit(manuscript/**)",
+      "MultiEdit(manuscript/**)",
+      "Read(research/**)",
+      "Write(research/**)",
+      "Edit(research/**)",
+      "Read(assets/**)",
+      "Write(assets/**)",
+      "Read(.claude/**)",
+      "TodoWrite"
+    ],
+    "ask": [
+      "Bash(pandoc:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(npm:*)",
+      "Bash(pip:*)",
+      "WebSearch",
+      "WebFetch"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(**/.env)",
+      "Read(**/secrets/**)",
+      "Read(**/credentials/**)",
+      "Bash(rm -rf:*)",
+      "Bash(sudo:*)",
+      "Bash(curl:*)",
+      "Write(.env)",
+      "Edit(.env)"
+    ]
+  },
+  "outputStyle": "outline-architect",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": {
+          "tools": ["Edit"]
+        },
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f manuscript/*.md ]; then proselint manuscript/*.md 2>/dev/null || true; fi",
+            "timeout": 30
+          }
+        ]
+      },
+      {
+        "matcher": {
+          "tools": ["Write"]
+        },
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [[ \"$TOOL_PATH\" == manuscript/*.md ]]; then git add \"$TOOL_PATH\" && git commit -m \"Auto-commit: Updated $(basename \"$TOOL_PATH\")\" 2>/dev/null || true; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -d manuscript ] && [ \"$(ls -A manuscript/*.md 2>/dev/null)\" ]; then echo 'Compiling manuscript...'; cat manuscript/ch*.md > assets/full_manuscript.md 2>/dev/null || true; fi",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}

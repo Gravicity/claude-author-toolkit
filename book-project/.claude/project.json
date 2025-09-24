@@ -1,0 +1,52 @@
+{
+  "name": "Book Co-Authoring Toolkit",
+  "type": "manuscript",
+  "version": "1.0.0",
+  "description": "A comprehensive toolkit for co-authoring books with Claude Code",
+  "workflow": {
+    "phases": [
+      {
+        "name": "Planning",
+        "outputStyle": "outline-architect",
+        "commands": ["/expand-note"],
+        "description": "Develop story structure and outlines"
+      },
+      {
+        "name": "Drafting",
+        "outputStyle": "scene-weaver",
+        "commands": ["/draft-chapter"],
+        "description": "Generate chapter drafts"
+      },
+      {
+        "name": "Revising",
+        "outputStyle": "line-editor",
+        "commands": ["/revise-chapter", "/fact-check"],
+        "description": "Polish prose and verify facts"
+      },
+      {
+        "name": "Marketing",
+        "outputStyle": "marketing-manager",
+        "commands": ["/marketing-pack"],
+        "description": "Create promotional materials"
+      }
+    ]
+  },
+  "agents": {
+    "available": [
+      "outline-architect",
+      "researcher",
+      "scene-weaver",
+      "line-editor",
+      "marketing-manager"
+    ]
+  },
+  "mcp_servers": {
+    "recommended": [
+      "brave-search",
+      "notion",
+      "zen-mcp",
+      "slack"
+    ],
+    "notes": "Install with: claude mcp add [server-name]"
+  }
+}
