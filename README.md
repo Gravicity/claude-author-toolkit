@@ -191,14 +191,16 @@ Tell it you're writing a thriller, it automatically adjusts pacing, structure, a
 ### Step 1: Create Your Writing Space
 Start Claude Code in the toolkit directory and run:
 ```
-/setup-coauthor my-book-title
+/setup-coauthor my-cookbook
 ```
+Example projects: `my-thriller`, `business-guide`, `sci-fi-novel`, `memoir`, `kids-book`
+
 This creates a complete writing environment with all tools ready to go.
 
 ### Step 2: Navigate to Your New Project
 Open a new terminal and navigate to your project:
 ```bash
-cd my-book-title
+cd my-cookbook
 claude  # Start Claude Code from your new project
 ```
 **Important**: You MUST restart Claude Code from inside your project folder for all the AI agents to work!
@@ -208,30 +210,52 @@ Now in your project's Claude Code session:
 ```
 /expand-note "Your book idea here"
 ```
+**Example prompts:**
+- `/expand-note "A cookbook for college students with only a microwave and mini fridge"`
+- `/expand-note "Mystery novel where a librarian solves crimes using book references"`
+- `/expand-note "Guide to starting a business with $100 or less"`
+- `/expand-note "Children's book about a dragon who's afraid of fire"`
+
 The AI team analyzes your idea, researches the topic, and creates a complete outline.
 
 ### Step 4: Start Writing
 ```
 /draft-chapter 1
 ```
+Or draft a specific chapter: `/draft-chapter 3` or `/draft-chapter introduction`
+
 Your Creative Writer drafts each chapter following the outline, maintaining consistent voice.
 
 ### Step 5: Polish to Perfection
 ```
 /revise-chapter 1
 ```
+You can also revise with specific focus:
+- `/revise-chapter 1` - General polish
+- `/revise-chapter 2` - Focus on dialogue
+- `/revise-chapter 3` - Tighten pacing
+
 Your Writing Coach refines the prose, improving flow and impact.
 
 ### Step 6: Verify Everything
 ```
 /fact-check 1
 ```
+Checks all facts in the chapter and adds citations where needed.
+
 Your Fact Checker verifies claims and adds citations.
 
 ### Step 7: Prepare for Launch
 ```
 /marketing-pack
 ```
+This creates:
+- Book description (back cover/Amazon)
+- Author bio
+- Press release template
+- Social media posts
+- Reader discussion questions
+
 Your Marketing Pro creates descriptions, bios, and promotional materials.
 
 ## Project Structure (What Gets Created)
