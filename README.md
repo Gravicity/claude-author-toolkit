@@ -195,31 +195,40 @@ Start Claude Code in the toolkit directory and run:
 ```
 This creates a complete writing environment with all tools ready to go.
 
-### Step 2: Plant Your Seed Idea
+### Step 2: Navigate to Your New Project
+Open a new terminal and navigate to your project:
+```bash
+cd my-book-title
+claude  # Start Claude Code from your new project
+```
+**Important**: You MUST restart Claude Code from inside your project folder for all the AI agents to work!
+
+### Step 3: Plant Your Seed Idea
+Now in your project's Claude Code session:
 ```
 /expand-note "Your book idea here"
 ```
 The AI team analyzes your idea, researches the topic, and creates a complete outline.
 
-### Step 3: Start Writing
+### Step 4: Start Writing
 ```
 /draft-chapter 1
 ```
 Your Creative Writer drafts each chapter following the outline, maintaining consistent voice.
 
-### Step 4: Polish to Perfection
+### Step 5: Polish to Perfection
 ```
 /revise-chapter 1
 ```
 Your Writing Coach refines the prose, improving flow and impact.
 
-### Step 5: Verify Everything
+### Step 6: Verify Everything
 ```
 /fact-check 1
 ```
 Your Fact Checker verifies claims and adds citations.
 
-### Step 6: Prepare for Launch
+### Step 7: Prepare for Launch
 ```
 /marketing-pack
 ```
